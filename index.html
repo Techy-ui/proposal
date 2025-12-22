@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Proposal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Page 1: Name Input -->
+    <div id="namePage" class="page active">
+        <div class="container">
+            <h1>Happy Valentine's Day!</h1>
+            <p>What's the name of the special girl?</p>
+            <input type="text" id="nameInput" placeholder="Enter her name">
+            <button id="submitName">Continue</button>
+        </div>
+    </div>
+
+    <!-- Page 2: Proposal -->
+    <div id="proposalPage" class="page">
+        <div class="container">
+            <h1 id="proposalTitle">Will You Be My Valentine, [Name]?</h1>
+            <p class="message">From the day we met, you've filled my life with joy and love. Every moment with you is a treasure. Will you make me the happiest by saying yes?</p>
+            <img src="your-photo.jpg" alt="Us together" class="photo"> <!-- Replace with your image -->
+            <button id="toReply">Ready for Your Answer?</button>
+        </div>
+        <!-- Floating Hearts Animation -->
+        <div class="hearts">
+            <div class="heart">❤️</div>
+            <div class="heart">💖</div>
+            <div class="heart">💕</div>
+            <div class="heart">💗</div>
+        </div>
+    </div>
+
+    <!-- Page 3: Reply -->
+    <div id="replyPage" class="page">
+        <div class="container">
+            <h1>What's Your Answer?</h1>
+            <button id="yesBtn">Yes! 💍</button>
+            <button id="noBtn">No</button>
+            <p id="response"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

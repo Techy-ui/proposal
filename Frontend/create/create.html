@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Proposal</title>
+    <link rel="stylesheet" href="create.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Create Your Proposal</h2>
+        <form id="proposal-form">
+            <input type="text" id="recipient" placeholder="Recipient's Name" required>
+            <textarea id="description" placeholder="Description (e.g., Why you love them)" required></textarea>
+            <textarea id="message" placeholder="Personal Message" required></textarea>
+            <input type="file" id="image" accept="image/*">
+            <select id="theme">
+                <option value="romantic">Romantic</option>
+                <option value="funny">Funny</option>
+                <option value="poetic">Poetic</option>
+            </select>
+            <button type="submit">Create Proposal</button>
+        </form>
+        <div id="link-display" style="display: none;">
+            <p>Share this link: <a id="proposal-link" target="_blank"></a></p>
+        </div>
+    </div>
+    <script src="create.js"></script>
+</body>
+</html>

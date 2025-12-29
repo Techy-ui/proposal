@@ -3,47 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Proposal</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>ValentineProposal</title>
+    <link rel="stylesheet" href="/Frontend/Home/home.css">
 </head>
 <body>
-    <!-- Page 1: Name Input -->
-    <div id="namePage" class="page active">
-        <div class="container">
-            <h1>Happy Valentine's Day!</h1>
-            <p>What's the name of the special girl?</p>
-            <input type="text" id="nameInput" placeholder="Enter her name">
-            <button id="submitName">Continue</button>
+
+<header class="navbar">
+    <h2>
+        <img src="/Frontend/logo.png" alt="logo" style="height:30px;vertical-align:middle;">
+        ValentineProposal
+    </h2>
+</header>
+
+<!-- HERO / DASHBOARD -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Make Magical Valentine’s Proposals 💖</h1>
+        <p>
+            Create beautiful, personalized Valentine’s Day proposals and surprise your loved one.
+            Make this Valentine's Day unforgettable with our magical proposal generator.
+        </p>
+
+        <div class="actions">
+            <button class="primary-btn" onclick="requireLogin()">Create Your Proposal</button>
+            <button class="outline-btn" onclick="requireLogin()">View Dashboard</button>
         </div>
     </div>
+</section>
 
-    <!-- Page 2: Proposal -->
-    <div id="proposalPage" class="page">
-        <div class="container">
-            <h1 id="proposalTitle">Will You Be My Valentine, [Name]?</h1>
-            <p class="message">From the day we met, you've filled my life with joy and love. Every moment with you is a treasure. Will you make me the happiest by saying yes?</p>
-            <img src="your-photo.jpg" alt="Us together" class="photo"> <!-- Replace with your image -->
-            <button id="toReply">Ready for Your Answer?</button>
-        </div>
-        <!-- Floating Hearts Animation -->
-        <div class="hearts">
-            <div class="heart">❤️</div>
-            <div class="heart">💖</div>
-            <div class="heart">💕</div>
-            <div class="heart">💗</div>
-        </div>
+<!-- LOGIN / SIGNUP SECTION -->
+<section class="auth-section" id="auth">
+    <div class="auth-card">
+        <h2 id="auth-title">Login to Continue 💘</h2>
+        <p id="auth-subtitle">Please login to access this feature</p>
+
+        <!-- IMPORTANT: IDs ADDED -->
+        <form id="auth-form">
+            <input
+                type="text"
+                id="name"
+                placeholder="Full Name"
+                style="display:none"
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Email"
+                required
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required
+            >
+
+            <button type="submit" class="primary-btn full">
+                Login
+            </button>
+        </form>
+
+        <p class="toggle-text">
+            Don’t have an account?
+            <span onclick="switchToSignup()">Sign Up</span>
+        </p>
     </div>
+</section>
 
-    <!-- Page 3: Reply -->
-    <div id="replyPage" class="page">
-        <div class="container">
-            <h1>What's Your Answer?</h1>
-            <button id="yesBtn">Yes! 💍</button>
-            <button id="noBtn">No</button>
-            <p id="response"></p>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+<script src="/Frontend/Home/home.js"></script>
 </body>
 </html>

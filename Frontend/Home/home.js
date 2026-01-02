@@ -66,7 +66,7 @@ document.getElementById("auth-form").addEventListener("submit", async (e) => {
     localStorage.setItem("user", JSON.stringify(data.user));
 
     alert("Login successful");
-    window.location.href = "dashboard.html";
+    window.location.href = "https://techy-ui.github.io/proposal/Frontend/dashboard/dashboard.html";
 }
 
 

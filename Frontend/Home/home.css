@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image:url('/Frontend/back.jpg');
+    background-image:url('https://techy-ui.github.io/proposal/Frontend/back.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

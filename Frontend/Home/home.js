@@ -1,5 +1,8 @@
 let isSignup = false;
 
+/* 🔗 LIVE BACKEND URL */
+const API_BASE = "https://proposal-fuwy.onrender.com";
+
 function requireLogin() {
     document.getElementById("auth").scrollIntoView({
         behavior: "smooth"
@@ -44,8 +47,8 @@ document.getElementById("auth-form").addEventListener("submit", async (e) => {
     const password = document.getElementById("password").value;
 
     const url = isSignup
-        ? "http://localhost:5000/api/auth/signup"
-        : "http://localhost:5000/api/auth/login";
+        ? `${API_BASE}/api/auth/signup`
+        : `${API_BASE}/api/auth/login`;
 
     const body = isSignup
         ? { name, email, password }
@@ -59,18 +62,24 @@ document.getElementById("auth-form").addEventListener("submit", async (e) => {
         });
 
         const data = await res.json();
-        alert(data.message);
 
-        if (res.ok && !isSignup) {
-    localStorage.setItem("token", data.token);
-    localStorage.setItem("user", JSON.stringify(data.user));
+        if (!res.ok) {
+            alert(data.message || "Something went wrong");
+            return;
+        }
 
-    alert("Login successful");
-    window.location.href = "https://techy-ui.github.io/proposal/Frontend/dashboard/dashboard.html";
-}
+        /* ✅ LOGIN SUCCESS */
+        if (!isSignup) {
+            localStorage.setItem("token", data.token);
+            localStorage.setItem("user", JSON.stringify(data.user));
 
+            window.location.href =
+                "https://techy-ui.github.io/proposal/Frontend/dashboard/dashboard.html";
+        }
 
-        if (res.ok && isSignup) {
+        /* ✅ SIGNUP SUCCESS */
+        if (isSignup) {
+            alert("Signup successful! Please login.");
             switchToLogin();
         }
 

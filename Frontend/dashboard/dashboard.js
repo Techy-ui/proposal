@@ -1,20 +1,17 @@
-const currentUser = localStorage.getItem('currentUser');
-if (!currentUser) {
-    window.location.href = 'auth.html';
+/* 🔐 PROTECT DASHBOARD */
+const token = localStorage.getItem("token");
+const userData = localStorage.getItem("user");
+
+if (!token || !userData) {
+    window.location.href = "../../index.html";
 }
 
-document.getElementById('username').textContent = currentUser;
+/* 👤 SHOW USER NAME */
+const user = JSON.parse(userData);
+document.getElementById("username").innerText = user.name;
 
-document.getElementById('create-btn').addEventListener('click', () => {
-    window.location.href = 'create.html';
-});
-
-const users = JSON.parse(localStorage.getItem('users')) || {};
-const proposals = users[currentUser]?.proposals || [];
-const list = document.getElementById('proposal-list');
-
-proposals.forEach((prop, index) => {
-    const li = document.createElement('li');
-    li.textContent = `Proposal to ${prop.recipient}: ${prop.status} - Link: ${window.location.origin}/proposal.html?id=${prop.id}`;
-    list.appendChild(li);
-});
+/* 🚪 LOGOUT */
+function logout() {
+    localStorage.clear();
+    window.location.href = "../../index.html";
+}

@@ -3,20 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Dashboard | ValentineProposal</title>
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome, <span id="username"></span>!</h1>
-    </header>
-    <div class="dashboard">
-        <button id="create-btn">Create New Proposal</button>
-        <div class="history">
-            <h2>Your Proposals</h2>
-            <ul id="proposal-list"></ul>
+
+<header class="navbar">
+    <h2>❤️ ValentineProposal</h2>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<main class="dashboard">
+    <h1>Welcome, <span id="username">User</span> 💖</h1>
+    <p>Create, manage, and relive your magical Valentine proposals.</p>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Create Proposal</h3>
+            <p>Craft a beautiful Valentine proposal for your loved one.</p>
+            <button>Create</button>
+        </div>
+
+        <div class="card">
+            <h3>My Proposals</h3>
+            <p>View and manage your saved proposals.</p>
+            <button>View</button>
+        </div>
+
+        <div class="card">
+            <h3>Account</h3>
+            <p>Manage your profile and preferences.</p>
+            <button>Settings</button>
         </div>
     </div>
-    <script src="dashboard.js"></script>
+</main>
+
+<script src="dashboard.js"></script>
 </body>
 </html>

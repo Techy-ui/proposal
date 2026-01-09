@@ -73,7 +73,14 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    pointer-events: auto;
 }
+.card button{
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+}
+
 
 .card.account {
     grid-column: 1 / -2;   /* span full width */

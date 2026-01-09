@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #ff9ff3, #f368e0);
+    background-image:url('https://techy-ui.github.io/proposal/Frontend/back.jpg');
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,17 +10,21 @@ body {
 }
 
 .form-container {
-    background: white;
+    background: rgba(255, 255, 255, 0.201);
     padding: 20px;
+    height:400px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: 400px;
+    width: 450px;
+   
 }
 
 input, textarea, select {
     display: block;
-    width: 100%;
-    margin: 10px 0;
+    width: 90%;
+    margin: 10px 10px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -38,4 +42,24 @@ button {
 
 button:hover {
     background: #ee5a52;
+}
+
+h2{
+    color: #ff4d6d;
+    font-family: "Merienda", cursive;
+}
+
+::placeholder {
+    font-family: "Edu NSW ACT Hand Pre", cursive;
+    font-family: "Dekko", cursive;
+}
+
+option {
+    font-family: "Edu NSW ACT Hand Pre", cursive;
+    font-family: "Dekko", cursive;
+}
+
+select {
+    font-family: "Edu NSW ACT Hand Pre", cursive;
+    font-family: "Dekko", cursive;
 }

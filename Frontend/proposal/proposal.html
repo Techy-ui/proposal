@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>💖 A Special Proposal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Proposal</title>
     <link rel="stylesheet" href="proposal.css">
 </head>
 <body>
-    <div class="proposal-container">
-        <h2>A Special Proposal for You</h2>
-        <div id="proposal-content"></div>
-        <form id="response-form" style="display: none;">
-            <textarea id="response" placeholder="Your Response" required></textarea>
-            <select id="answer">
-                <option value="yes">Yes!</option>
-                <option value="no">No</option>
-                <option value="maybe">Maybe</option>
-            </select>
-            <button type="submit">Send Response</button>
-        </form>
-        <p id="thank-you" style="display: none;">Thank you for your response!</p>
+
+<div class="proposal-container">
+    <h1 id="recipientName">💌</h1>
+
+    <p class="description" id="description"></p>
+
+    <div class="message-box">
+        <p id="message"></p>
     </div>
-    <script src="proposal.js"></script>
+
+    <img id="proposalImage" style="display:none;" />
+
+    <p class="theme-text" id="themeText"></p>
+</div>
+
+<script src="proposal.js"></script>
 </body>
 </html>

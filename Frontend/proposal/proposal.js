@@ -1,35 +1,40 @@
-const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get('id');
-if (!id) {
-    alert('Invalid proposal link');
-    return;
+/* 🔍 GET PROPOSAL ID FROM URL */
+const params = new URLSearchParams(window.location.search);
+const proposalId = params.get("id");
+
+if (!proposalId) {
+    document.body.innerHTML = "<h2>Invalid Proposal Link</h2>";
 }
 
-const proposals = JSON.parse(localStorage.getItem('proposals')) || {};
-const proposal = proposals[id];
+/* 📦 GET SAVED PROPOSALS (TEMP LOCAL STORAGE) */
+const proposals = JSON.parse(localStorage.getItem("proposals")) || [];
+
+/* 🔎 FIND MATCHING PROPOSAL */
+const proposal = proposals.find(p => p.id === proposalId);
+
 if (!proposal) {
-    alert('Proposal not found');
-    return;
+    document.body.innerHTML = "<h2>Proposal not found 💔</h2>";
+} else {
+    /* APPLY THEME */
+    document.body.classList.add(proposal.theme);
+
+    /* FILL CONTENT */
+    document.getElementById("recipientName").innerText =
+        `Dear ${proposal.recipient} 💖`;
+
+    document.getElementById("description").innerText =
+        proposal.description;
+
+    document.getElementById("message").innerText =
+        proposal.message;
+
+    document.getElementById("themeText").innerText =
+        `Theme: ${proposal.theme}`;
+
+    /* SHOW IMAGE IF EXISTS */
+    if (proposal.image) {
+        const img = document.getElementById("proposalImage");
+        img.src = proposal.image;
+        img.style.display = "block";
+    }
 }
-
-const contentDiv = document.getElementById('proposal-content');
-contentDiv.innerHTML = `
-    <p><strong>From:</strong> Someone special</p>
-    <p><strong>Description:</strong> ${proposal.description}</p>
-    <p><strong>Message:</strong> ${proposal.message}</p>
-    ${proposal.image ? `<img src="${proposal.image}" alt="Proposal Image">` : ''}
-    <p><strong>Theme:</strong> ${proposal.theme}</p>
-`;
-
-document.getElementById('response-form').style.display = 'block';
-
-document.getElementById('response-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const response = document.getElementById('response').value;
-    const answer = document.getElementById('answer').value;
-    proposal.responses.push({ response, answer, date: new Date().toISOString() });
-    proposal.status = answer === 'yes' ? 'Accepted' : answer === 'no' ? 'Rejected' : 'Pending';
-    localStorage.setItem('proposals', JSON.stringify(proposals));
-    document.getElementById('response-form').style.display = 'none';
-    document.getElementById('thank-you').style.display = 'block';
-});

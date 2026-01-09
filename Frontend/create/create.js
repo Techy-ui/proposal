@@ -46,7 +46,7 @@ function showGeneratedLink(proposal) {
     proposals.push(proposal);
     localStorage.setItem("proposals", JSON.stringify(proposals));
 
-    const link = `${window.location.origin}/proposal.html?id=${proposal.id}`;
+    const link = `https://techy-ui.github.io/proposal/Frontend/proposal/proposal.html?id=${proposal.id}`;
 
     const linkEl = document.getElementById("proposal-link");
     linkEl.href = link;

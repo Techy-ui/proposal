@@ -29,3 +29,6 @@ app.listen(process.env.PORT, () => {
 
 const proposalRoutes = require("./routes/proposal");
 app.use("/api/proposals", proposalRoutes);
+
+const cors = require("cors");
+app.use(cors());
